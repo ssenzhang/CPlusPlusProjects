@@ -10,6 +10,7 @@ END_MESSAGE_MAP()
 
 NotepadMainWnd::NotepadMainWnd()
 {
+	m_menu.LoadMenu(IDR_MENU1);
 }
 
 int NotepadMainWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -17,11 +18,13 @@ int NotepadMainWnd::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	m_menu.LoadMenu(IDR_MENU1);
-	this->SetMenu(&m_menu);
+	if (m_menu)
+		this->SetMenu(&m_menu);
 
 	return 0;
 }
+
+
 
 void NotepadMainWnd::OnPaint()
 {

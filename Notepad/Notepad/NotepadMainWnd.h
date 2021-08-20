@@ -7,11 +7,12 @@ class NotepadMainWnd : public CFrameWnd
 {
 public:
 	NotepadMainWnd();
-	virtual int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	//virtual int OnCreate(LPCREATESTRUCT lpCreateStruct); 
 public:
 	CMenu m_menu;
 protected:
 	afx_msg void OnPaint();
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct); 
 	DECLARE_MESSAGE_MAP();
 };
 
